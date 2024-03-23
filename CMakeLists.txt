@@ -3,6 +3,8 @@ set(qcoro_VERSION 0.10.80)
 set(qcoro_SOVERSION 0)
 project(qcoro LANGUAGES CXX VERSION ${qcoro_VERSION})
 
+set(USE_QT_VERSION 5)
+
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
 
 include(GNUInstallDirs)
@@ -17,7 +19,7 @@ option(QCORO_BUILD_EXAMPLES "Build examples" ON)
 add_feature_info(Examples QCORO_BUILD_EXAMPLES "Build examples")
 option(QCORO_ENABLE_ASAN "Build with AddressSanitizer" OFF)
 add_feature_info(Asan QCORO_ENABLE_ASAN "Build with AddressSanitizer")
-option(QCORO_DISABLE_DEPRECATED_TASK_H "Disable deprecated task.h header" OFF)
+option(QCORO_DISABLE_DEPRECATED_TASK_H "Disable deprecated task.h header" ON)
 
 if(WIN32 OR APPLE OR ANDROID)
     option(QCORO_WITH_QTDBUS "Build QtDBus support" OFF)
